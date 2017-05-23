@@ -10,8 +10,8 @@ class App extends Component {
     const config = {
          apiKey: 'AIzaSyBMlRsCqI_s6rJ-N7PPCc0F9ygY7g54vhs',
          authDomain: 'manager-130ee.firebaseapp.com',
-          databaseURL: 'https://manager-130ee.firebaseio.com',
-          projectId: 'manager-130ee',
+         databaseURL: 'https://manager-130ee.firebaseio.com',
+         projectId: 'manager-130ee',
          storageBucket: 'manager-130ee.appspot.com',
          messagingSenderId: '264672257487'
   };
