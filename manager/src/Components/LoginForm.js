@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { Card, CardSection, Input, Button } from './common';
 
 class LoginForm extends Component {
+    onEmailChange(text){
+        
+    }
+    
     render() {
         return (
             <Card>
                 <CardSection>
-                    <Input label="Email" placeholder="email@example.com" />
+                    <Input onChangeText={this.onEmailChange.bind(this)} label="Email" placeholder="email@example.com" />
                 </CardSection>
                 <CardSection>
                     <Input secureTextEntry label="Password" placeholder="mypassword123" />
