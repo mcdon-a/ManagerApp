@@ -43,5 +43,5 @@ const loginUserFail = (dispatch) => {
 const loginUserSuccess = (dispatch, user) => {
     dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
     //The method after the dot is the key of the scene you want
-    Actions.EmployeeList();
+    Actions.main();
 };
