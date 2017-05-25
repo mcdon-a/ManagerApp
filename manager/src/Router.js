@@ -5,7 +5,8 @@ import LoginForm from './Components/LoginForm';
 
 const RouterComponent = () => {
     return (
-        <Router>
+        //This may have to be an android specific value for margin top
+        <Router sceneStyle={{ marginTop: 50 }}>
             <Scene key="login" component={LoginForm} title="Login" />
         </Router>
     );
