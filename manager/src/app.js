@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import LoginForm from './Components/LoginForm';
+import RouterComponent from './Router';
 
 class App extends Component {
     componentWillMount() {
@@ -23,7 +24,7 @@ class App extends Component {
         return (
             //The second argument is an initial state that we want to pass
             <Provider store={store}>
-                <LoginForm />
+                <RouterComponent />
             </Provider>
         );
     }
