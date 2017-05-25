@@ -17,7 +17,11 @@ export default (state = INITIAL_STATE, action) => {
         case LOGIN_USER_SUCCESS:
             //Be careful. If there exists a variable that isnt
             //defined, it will throw an error and pass over the next bit of code
-            return { ...state, user: action.payload, error: '', loading: false };
+            return { 
+                ...state,
+                ...INITIAL_STATE, 
+                user: action.payload, 
+            };
         case LOGIN_USER_FAIL:
             return { ...state, error: 'Authenitcation Failed.', password: '', loading: false };
         default:
