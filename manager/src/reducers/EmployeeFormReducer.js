@@ -8,6 +8,7 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case EMPLOYEE_UPDATE:
             //An example of ES6 key interpolation
+            console.log(state);
             return { ...state, [action.payload.prop]: action.payload.value };
         default:
             return state;
