@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CardSection, Input, Button, Card } from './common';
 import { connect } from 'react-redux';
 import { EmployeeUpdate } from '../actions';
+import { Picker } from 'react-native';
 
 class EmployeeCreate extends Component {
     render() {
@@ -25,7 +26,21 @@ class EmployeeCreate extends Component {
                     />
                 </CardSection>
 
-                <CardSection />
+                <CardSection>
+                    <Picker
+                    style={{ flex: 1 }}
+                    selectedValue={this.props.shift}
+                    onValueChange={value => this.props.EmployeeUpdate({ prop: 'shift', value })}
+                    >
+                        <Picker.Item label="Monday" value="Monday" />
+                        <Picker.Item label="Tuesday" value="Tuesday" />
+                        <Picker.Item label="Wednesday" value="Wednesday" />
+                        <Picker.Item label="Thursday" value="Thursday" />
+                        <Picker.Item label="Friday" value="Friday" />
+                        <Picker.Item label="Saturday" value="Saturday" />
+                        <Picker.Item label="Sunday" value="Sunday" />
+                    </Picker>
+                </CardSection>
 
                 <CardSection>
                     <Button>
