@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { CardSection, Input, Button, Card } from './common';
 import { connect } from 'react-redux';
-import { EmployeeUpdate, employeeCreate } from '../actions';
 import { Picker, Text } from 'react-native';
+import { CardSection, Input, Button, Card } from './common';
+import { EmployeeUpdate, employeeCreate } from '../actions';
 
 class EmployeeCreate extends Component {
     onButtonPress() {
         const { name, phone, shift } = this.props;
 
-        this.props.employeeCreate({ name, phone, shift });
+        this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
     }
 
     render() {
