@@ -2,7 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 
 const CardSection = (props) => (
-        <View style={styles.containerStyle}>
+  //The style most to the right will overwrite the initial style
+        <View style={[styles.containerStyle, props.style]}>
             {props.children}
         </View>
     );

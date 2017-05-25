@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CardSection, Input, Button, Card } from './common';
 import { connect } from 'react-redux';
 import { EmployeeUpdate } from '../actions';
-import { Picker } from 'react-native';
+import { Picker, Text } from 'react-native';
 
 class EmployeeCreate extends Component {
     render() {
@@ -26,9 +26,13 @@ class EmployeeCreate extends Component {
                     />
                 </CardSection>
 
-                <CardSection>
+                <CardSection // This won't automatically go. It needs an override in the original file
+                style={{ flexDirection: 'column' }}
+                >
+                    <Text style={styles.pickerTextStyle}>Shift</Text>
                     <Picker
-                    style={{ flex: 1 }}
+                    //The flex 1 style only works if the flexDirection is row
+                    style={{ marginLeft: 15 }}
                     selectedValue={this.props.shift}
                     onValueChange={value => this.props.EmployeeUpdate({ prop: 'shift', value })}
                     >
@@ -51,6 +55,13 @@ class EmployeeCreate extends Component {
         );
     }
 }
+
+const styles = {
+    pickerTextStyle: {
+        fontSize: 18,
+        marginLeft: 20
+    }
+};
 
 const mapStateToProps = (state) => {
     const { name, phone, shift } = state.employeeForm;
