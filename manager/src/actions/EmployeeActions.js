@@ -15,10 +15,13 @@ export const EmployeeUpdate = ({ prop, value }) => {
 export const employeeCreate = ({ name, phone, shift }) => {
     const { currentUser } = firebase.auth();
 
-    return () => {
+    return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
     .push({ name, phone, shift })
-    .then(() => Actions.EmployeeList({ type: 'reset' }));
+    .then(() => {
+        dispatch({ type: EMPLOYEE_CREATE });
+        Actions.EmployeeList({ type: 'reset' });
+    });
     };
 };
 
